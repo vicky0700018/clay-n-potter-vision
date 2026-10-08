@@ -8,3 +8,8 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the template's TanStack routing infrastructure; implement all requested business functionality with native React and browser storage only, because the hosting framework is fixed and the experience must remain frontend-only.
+- Centralize mock content and storage in one shared React provider so public pages reflect demo administrator changes consistently.
+- Use native reusable controls and inline SVG icons, not the preinstalled UI libraries, to respect the no-additional-library requirement.
+- School photos cropped from supplied collages use asset pointers; generated environment photography uses Vite imports, keeping image references stable for publishing.
