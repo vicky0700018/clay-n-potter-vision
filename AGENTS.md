@@ -13,3 +13,4 @@
 - Centralize mock content and storage in one shared React provider so public pages reflect demo administrator changes consistently.
 - Use native reusable controls and inline SVG icons, not the preinstalled UI libraries, to respect the no-additional-library requirement.
 - School photos cropped from supplied collages use asset pointers; generated environment photography uses Vite imports, keeping image references stable for publishing.
+- Prerender all fixed routes and emit the school photo export cache at the exact asset-pointer paths into the client bundle; this allows Vercel static hosting without a Lovable asset proxy or backend.
