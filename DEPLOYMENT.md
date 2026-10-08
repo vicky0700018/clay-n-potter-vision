@@ -5,7 +5,7 @@ The fixed Lovable template uses React, Vite, Tailwind and TanStack routing. No b
 ## Vercel static deployment
 
 1. Import this repository into Vercel.
-2. Use the included `vercel.json`: build command `bun run build`, output `dist/client`.
+2. Use the included `vercel.json`: it runs `npm run build`, copies `dist/client` to `site`, and publishes `site`. In Vercel Project Settings keep Framework = Other and leave Output Directory override OFF.
 3. All public and admin page paths are prerendered to static HTML by Vite. Vercel serves the generated pages; no application backend is needed.
 4. All displayed generated preschool photographs are Vite imports, bundled into the client output without CDN proxy dependencies. Legacy reference-photo URLs in saved demo content are migrated automatically.
 5. Verify every deployed page and gallery image after deployment. This project has not been deployed to Vercel from this workspace, so live Vercel behavior remains unverified.
