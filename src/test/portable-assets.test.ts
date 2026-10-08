@@ -1,15 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import { portableSchoolAssets } from '../../build/school-assets';
-import photoBundle from '../../build/school-photo-bundle.json';
-describe('Portable school photographs', () => {
-  it('emits all 24 photos at their exact production URL paths', () => {
-    const emitted: { fileName: string; source: Uint8Array }[] = [];
-    const plugin = portableSchoolAssets();
-    const hook = plugin.generateBundle;
-    if (typeof hook !== 'function') throw new Error('Missing export hook');
-    Reflect.apply(hook, { emitFile: (asset: { fileName: string; source: Uint8Array }) => emitted.push(asset) }, []);
-    expect(emitted).toHaveLength(24);
-    expect(emitted.map(photo => photo.fileName)).toEqual(photoBundle.map(photo => photo.path));
-    expect(emitted.every(photo => photo.source[0] === 255 && photo.source[1] === 216)).toBe(true);
-  });
+import { initialData, migrateReferenceImages } from '@/data/school';
+describe('Reference image replacement', () => {
+ it('replaces legacy reference URLs while preserving administrator content', () => {
+ const saved={...initialData,programs:initialData.programs.map(item=>({...item,name:'Edited program',image:'/__l5e/assets-v1/legacy/school.jpg'}))};
+ const migrated=migrateReferenceImages(saved);
+ expect(migrated.programs[0]?.name).toBe('Edited program');
+ expect(migrated.programs[0]?.image).toBe(initialData.programs[0]?.image);
+ expect(migrated.programs[0]?.image).not.toContain('/__l5e/assets-v1/');
+ });
+ it('preserves custom administrator images',()=>{
+ const saved={...initialData,programs:initialData.programs.map(item=>({...item,image:'https://example.com/custom.jpg'}))};
+ expect(migrateReferenceImages(saved).programs[0]?.image).toBe('https://example.com/custom.jpg');
+ });
 });
