@@ -1,5 +1,5 @@
 # Website roadmap
-- [ ] Replace reference crops with sharp generated preschool photography and prominent page banners
+- [x] Replace reference crops with sharp generated preschool photography and prominent page banners
 - [x] Public pages, shared design and school photography
 - [x] Gallery filters and lightbox; enquiry forms
 - [x] Demo admin login and all local management modules
