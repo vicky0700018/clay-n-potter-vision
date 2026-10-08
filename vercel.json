@@ -1,6 +1,8 @@
 {
- "buildCommand": "bun run build",
- "outputDirectory": "dist/client",
- "framework": null,
- "cleanUrls": true
+  "installCommand": "npm install",
+  "buildCommand": "npm run build && rm -rf site && cp -r dist/client site",
+  "outputDirectory": "site",
+  "framework": null,
+  "cleanUrls": true,
+  "trailingSlash": false
 }
