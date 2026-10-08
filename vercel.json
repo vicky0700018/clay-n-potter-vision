@@ -1,6 +1,6 @@
 {
   "installCommand": "npm install",
-  "buildCommand": "npm run build && node build/vercel-copy.mjs",
+  "buildCommand": "npm run build && node scripts/vercel-copy.mjs",
   "outputDirectory": "site",
   "framework": null,
   "cleanUrls": true,
