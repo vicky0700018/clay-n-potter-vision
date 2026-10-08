@@ -12,5 +12,5 @@
 - Keep the template's TanStack routing infrastructure; implement all requested business functionality with native React and browser storage only, because the hosting framework is fixed and the experience must remain frontend-only.
 - Centralize mock content and storage in one shared React provider so public pages reflect demo administrator changes consistently.
 - Use native reusable controls and inline SVG icons, not the preinstalled UI libraries, to respect the no-additional-library requirement.
-- School photos cropped from supplied collages use asset pointers; generated environment photography uses Vite imports, keeping image references stable for publishing.
-- Prerender all fixed routes and emit the school photo export cache at the exact asset-pointer paths into the client bundle; this allows Vercel static hosting without a Lovable asset proxy or backend.
+- Generated preschool photography uses eager Vite asset imports; migrate legacy reference-photo URLs when restoring demo storage so existing browsers receive the new images.
+- Prerender all fixed routes and bundle imported photographs into the client output for static hosting without an asset proxy.

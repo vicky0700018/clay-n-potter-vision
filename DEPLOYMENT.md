@@ -7,7 +7,7 @@ The fixed Lovable template uses React, Vite, Tailwind and TanStack routing. No b
 1. Import this repository into Vercel.
 2. Use the included `vercel.json`: build command `bun run build`, output `dist/client`.
 3. All public and admin page paths are prerendered to static HTML by Vite. Vercel serves the generated pages; no application backend is needed.
-4. `build/school-assets.ts` emits the 24 supplied school photo crops into the client output at the exact URLs specified by their asset pointers. The text photo export cache is retained so builds do not need Lovable credentials or a preview URL. The classroom image is a regular Vite import.
+4. All displayed generated preschool photographs are Vite imports, bundled into the client output without CDN proxy dependencies. Legacy reference-photo URLs in saved demo content are migrated automatically.
 5. Verify every deployed page and gallery image after deployment. This project has not been deployed to Vercel from this workspace, so live Vercel behavior remains unverified.
 
 ## Important before a real launch
@@ -16,6 +16,5 @@ The fixed Lovable template uses React, Vite, Tailwind and TanStack routing. No b
 - Changes and form submissions are local to one browser/device, not shared with staff or other parents.
 - Forms do not send email. Call the school for a real enquiry.
 - Parent testimonials, timings and opening hours are illustrative. Obtain verified content before publishing.
-- The hero and two facilities images are generated illustrative environments, not photographs of the actual premises.
-- Uploaded photos are small collage extracts. Ask the client for original high-resolution photographs and permission to publish photos of children.
+- All current preschool images are AI-created illustrations, not photographs of the actual premises or pupils. Uploaded images were references and are no longer displayed. Replace with authorised real photographs if desired before launch.
 - The supplied email address is preserved exactly; confirm it is a working mailbox before launch.
